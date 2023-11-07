@@ -1,4 +1,4 @@
-namespace Group_PD_211_Windows_Forms_homework
+namespace _01_Intro_to_Windows_Forms
 {
     public partial class Form1 : Form
     {

@@ -1,4 +1,4 @@
-namespace Group_PD_211_Windows_Forms_homework
+namespace _01_Intro_to_Windows_Forms
 {
     internal static class Program
     {
