@@ -1,1 +1,1 @@
-# Group-PD_211_Windows-Forms_homework
+# Домашні завдання по Windows Forms
