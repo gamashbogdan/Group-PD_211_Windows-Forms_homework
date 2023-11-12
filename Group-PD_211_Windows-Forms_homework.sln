@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Intro_to_Windows_Forms", "01_Intro_to_Windows_Forms\01_Intro_to_Windows_Forms.csproj", "{7D360CEE-EBCA-4278-B7F0-F98A3B9D727A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Intro_to_Windows_Forms", "01_Intro_to_Windows_Forms\01_Intro_to_Windows_Forms.csproj", "{7D360CEE-EBCA-4278-B7F0-F98A3B9D727A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Base_Controls_Buttons", "02_Base_Controls_Buttons\02_Base_Controls_Buttons.csproj", "{327CB165-6C58-4B69-A76A-8A702CBA9B3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7D360CEE-EBCA-4278-B7F0-F98A3B9D727A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D360CEE-EBCA-4278-B7F0-F98A3B9D727A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D360CEE-EBCA-4278-B7F0-F98A3B9D727A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327CB165-6C58-4B69-A76A-8A702CBA9B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327CB165-6C58-4B69-A76A-8A702CBA9B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327CB165-6C58-4B69-A76A-8A702CBA9B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327CB165-6C58-4B69-A76A-8A702CBA9B3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
