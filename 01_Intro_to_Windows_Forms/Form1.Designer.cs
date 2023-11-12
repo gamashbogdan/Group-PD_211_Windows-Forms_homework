@@ -1,4 +1,4 @@
-﻿namespace _01_Intro_to_Windows_Forms
+﻿namespace Dz_na._16._11
 {
     partial class Form1
     {
@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            btnCatch = new Button();
+            SuspendLayout();
+            // 
+            // btnCatch
+            // 
+            btnCatch.Image = (Image)resources.GetObject("btnCatch.Image");
+            btnCatch.Location = new Point(347, 85);
+            btnCatch.Name = "btnCatch";
+            btnCatch.Size = new Size(217, 145);
+            btnCatch.TabIndex = 0;
+            btnCatch.Text = "\r\n";
+            btnCatch.UseVisualStyleBackColor = true;
+            btnCatch.Click += button1_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 451);
+            Controls.Add(btnCatch);
+            Name = "Form1";
+            Text = "Form1";
+            MouseMove += Form1_MouseMove;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCatch;
     }
 }

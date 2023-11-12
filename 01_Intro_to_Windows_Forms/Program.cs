@@ -1,4 +1,4 @@
-namespace _01_Intro_to_Windows_Forms
+namespace Dz_na._16._11
 {
     internal static class Program
     {
