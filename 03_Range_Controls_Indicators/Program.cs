@@ -1,4 +1,4 @@
-namespace _03_Range_Controls_Indicators
+namespace Dz_na_20._11
 {
     internal static class Program
     {
