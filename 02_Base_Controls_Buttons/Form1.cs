@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Dz_na._08._11
+namespace Dz_na._18._11
 {
     public partial class Form1 : Form
     {

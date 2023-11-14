@@ -1,4 +1,4 @@
-﻿namespace Dz_na._08._11
+﻿namespace Dz_na._18._11
 {
     partial class Form1
     {

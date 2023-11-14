@@ -11,7 +11,7 @@ namespace Dz_na._16._11
         {
             try
             {
-                System.Diagnostics.Process.Start("https://finance.ua/credits/all");
+                System.Diagnostics.Process.Start("MicrosoftEdge.exe", "https://finance.ua/credits/all");
             }
             catch (Exception ex)
             {
@@ -24,7 +24,7 @@ namespace Dz_na._16._11
             this.Text = $"Mouse position : {e.X} : {e.Y}";
             Point mouse = e.Location;
             Random random = new Random();
-            if (mouse.X >= btnCatch.Left - 40 && (mouse.X <= btnCatch.Left + btnCatch.Width + 40))
+            if (mouse.X >= btnCatch.Left - 20 && (mouse.X <= btnCatch.Left + btnCatch.Width + 20))
             {
                 if (mouse.X >= btnCatch.Left + (btnCatch.Width / 2))
                 {
@@ -34,17 +34,8 @@ namespace Dz_na._16._11
                 {
                     btnCatch.Left = btnCatch.Left + 30;
                 }
-
-                if (btnCatch.Left < 0)
-                {
-                    btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
-                }
-                if (btnCatch.Right + 30 > this.Width)
-                {
-                    btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
-                }
             }
-            else if (mouse.Y >= btnCatch.Top + 40 && (mouse.Y <= btnCatch.Top + btnCatch.Height + 40))
+            else if (mouse.Y >= btnCatch.Top + 20 && (mouse.Y <= btnCatch.Top + btnCatch.Height + 20))
             {
                 if (mouse.Y >= btnCatch.Top + (btnCatch.Width / 2))
                 {
@@ -54,14 +45,23 @@ namespace Dz_na._16._11
                 {
                     btnCatch.Top = btnCatch.Top + 20;
                 }
-                if (btnCatch.Top < 0)
-                {
-                    btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
-                }
-                if (btnCatch.Top + 100 > this.Height)
-                {
-                    btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
-                }
+                
+            }
+            if (btnCatch.Top < 0)
+            {
+                btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
+            }
+            if (btnCatch.Top + btnCatch.Height > this.ClientSize.Height)
+            {
+                btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
+            }
+            if (btnCatch.Left < 0)
+            {
+                btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
+            }
+            if (btnCatch.Left + btnCatch.Width > this.ClientSize.Width)
+            {
+                btnCatch.Location = new Point(random.Next(this.Width), random.Next(this.Height));
             }
         }
     }
