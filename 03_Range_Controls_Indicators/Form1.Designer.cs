@@ -181,7 +181,7 @@
             // setingColorToolStripMenuItem
             // 
             setingColorToolStripMenuItem.Name = "setingColorToolStripMenuItem";
-            setingColorToolStripMenuItem.Size = new Size(224, 26);
+            setingColorToolStripMenuItem.Size = new Size(172, 26);
             setingColorToolStripMenuItem.Text = "Seting color";
             // 
             // Form1

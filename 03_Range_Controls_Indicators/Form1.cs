@@ -96,9 +96,15 @@ namespace Dz_na_20._11
             saveWords = TextBox.Text;
             if (saveWords.Length != 0)
             {
-                if (MessageBox.Show("Save Text?", "", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("Save Text?", "", MessageBoxButtons.YesNoCancel);
+
+                if (result == DialogResult.Yes)
                 {
                     SaveToFile();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true; // Запобігає закриттю форми
                 }
             }
         }
