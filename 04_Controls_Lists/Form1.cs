@@ -111,7 +111,6 @@ namespace Dz_na_23._11
             }
             listBoxCars.DataSource = loadeCars;
         }
-        public override string Text { get; set; }
 
     }
 }
