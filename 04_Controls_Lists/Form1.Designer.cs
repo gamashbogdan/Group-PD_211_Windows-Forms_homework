@@ -1,4 +1,4 @@
-﻿namespace _04_Controls_Lists
+﻿namespace Dz_na_23._11
 {
     partial class Form1
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBoxModel = new TextBox();
             numericUpDownYear = new NumericUpDown();
             comboBoxColors = new ComboBox();
@@ -61,17 +62,24 @@
             // 
             // numericUpDownYear
             // 
+            numericUpDownYear.AccessibleDescription = "";
+            numericUpDownYear.AccessibleName = "";
             numericUpDownYear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             numericUpDownYear.Location = new Point(117, 100);
+            numericUpDownYear.Maximum = new decimal(new int[] { 2023, 0, 0, 0 });
+            numericUpDownYear.Minimum = new decimal(new int[] { 1990, 0, 0, 0 });
             numericUpDownYear.Name = "numericUpDownYear";
             numericUpDownYear.Size = new Size(150, 27);
             numericUpDownYear.TabIndex = 1;
+            numericUpDownYear.Tag = "";
+            numericUpDownYear.Value = new decimal(new int[] { 1990, 0, 0, 0 });
             // 
             // comboBoxColors
             // 
+            comboBoxColors.DropDownWidth = 300;
             comboBoxColors.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            comboBoxColors.FormattingEnabled = true;
-            comboBoxColors.Items.AddRange(new object[] { "red", "blue" });
+            comboBoxColors.ItemHeight = 20;
+            comboBoxColors.Items.AddRange(new object[] { "Red", "Orange", "Yellow", "Green", "Blue", "Рurple", "Pink", "White", "Black", "Brown", "Gray", "Gold – золотий", "Olive – оливковий", "Amber – бурштиновий", "Peach – персиковий", "Body color – тілесний відтінок", "Sky color – небесний", "Chocolate – шоколадний", "Cream – кремовий", "Lilac - сірий", "Emerald - смарагдовий", "Orange – помаранчевий", "Snow – сніговий", "Camel – жовтувато-коричневий колір" });
             comboBoxColors.Location = new Point(117, 144);
             comboBoxColors.Name = "comboBoxColors";
             comboBoxColors.Size = new Size(151, 28);
@@ -80,7 +88,9 @@
             // numericUpDownProbig
             // 
             numericUpDownProbig.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            numericUpDownProbig.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             numericUpDownProbig.Location = new Point(116, 191);
+            numericUpDownProbig.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDownProbig.Name = "numericUpDownProbig";
             numericUpDownProbig.Size = new Size(152, 27);
             numericUpDownProbig.TabIndex = 3;
@@ -88,6 +98,7 @@
             // labelNewCar
             // 
             labelNewCar.AutoSize = true;
+            labelNewCar.BackColor = Color.FromArgb(224, 224, 224);
             labelNewCar.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
             labelNewCar.Location = new Point(117, 6);
             labelNewCar.Name = "labelNewCar";
@@ -98,6 +109,7 @@
             // labelModel
             // 
             labelModel.AutoSize = true;
+            labelModel.BackColor = Color.FromArgb(224, 224, 224);
             labelModel.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelModel.Location = new Point(32, 55);
             labelModel.Name = "labelModel";
@@ -108,6 +120,7 @@
             // labelYear
             // 
             labelYear.AutoSize = true;
+            labelYear.BackColor = Color.FromArgb(224, 224, 224);
             labelYear.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelYear.Location = new Point(32, 100);
             labelYear.Name = "labelYear";
@@ -118,6 +131,7 @@
             // labelColors
             // 
             labelColors.AutoSize = true;
+            labelColors.BackColor = Color.FromArgb(224, 224, 224);
             labelColors.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelColors.Location = new Point(32, 152);
             labelColors.Name = "labelColors";
@@ -128,6 +142,7 @@
             // labelProbig
             // 
             labelProbig.AutoSize = true;
+            labelProbig.BackColor = Color.FromArgb(224, 224, 224);
             labelProbig.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelProbig.Location = new Point(32, 198);
             labelProbig.Name = "labelProbig";
@@ -138,6 +153,7 @@
             // labelValue
             // 
             labelValue.AutoSize = true;
+            labelValue.BackColor = Color.FromArgb(224, 224, 224);
             labelValue.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelValue.Location = new Point(32, 238);
             labelValue.Name = "labelValue";
@@ -184,6 +200,7 @@
             // listBoxCars
             // 
             listBoxCars.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            listBoxCars.ForeColor = SystemColors.WindowText;
             listBoxCars.FormattingEnabled = true;
             listBoxCars.ItemHeight = 23;
             listBoxCars.Location = new Point(375, 53);
@@ -218,6 +235,7 @@
             // labelCarList
             // 
             labelCarList.AutoSize = true;
+            labelCarList.BackColor = Color.FromArgb(224, 224, 224);
             labelCarList.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
             labelCarList.Location = new Point(507, 9);
             labelCarList.Name = "labelCarList";
@@ -227,16 +245,23 @@
             // 
             // numericUpDownValue
             // 
+            numericUpDownValue.DecimalPlaces = 1;
             numericUpDownValue.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            numericUpDownValue.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numericUpDownValue.Location = new Point(115, 236);
+            numericUpDownValue.Maximum = new decimal(new int[] { 240, 0, 0, 65536 });
+            numericUpDownValue.Minimum = new decimal(new int[] { 10, 0, 0, 65536 });
             numericUpDownValue.Name = "numericUpDownValue";
             numericUpDownValue.Size = new Size(152, 27);
             numericUpDownValue.TabIndex = 18;
+            numericUpDownValue.Value = new decimal(new int[] { 10, 0, 0, 65536 });
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 255, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(numericUpDownValue);
             Controls.Add(labelCarList);
@@ -257,6 +282,7 @@
             Controls.Add(numericUpDownYear);
             Controls.Add(textBoxModel);
             Name = "Form1";
+            Tag = "dsfdsf";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)numericUpDownYear).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownProbig).EndInit();

@@ -1,15 +1,21 @@
-using System.Reflection;
 using System.Xml.Serialization;
-
-namespace _04_Controls_Lists
+namespace Dz_na_23._11
 {
+
     public partial class Form1 : Form
     {
+        List<Cars> cars;
         public Form1()
         {
             InitializeComponent();
+            cars = new List<Cars>();
+            listBoxCars.DataSource = cars;
         }
-
+        private void Update()
+        {
+            listBoxCars.DataSource = null;
+            listBoxCars.DataSource = cars;
+        }
         private void buttonAddCar_Click(object sender, EventArgs e)
         {
             int countSymbols = 0;
@@ -20,14 +26,27 @@ namespace _04_Controls_Lists
             }
             if (countSymbols != 0)
             {
-                listBoxCars.Items.Add(new Cars(textBoxModel.Text, (int)numericUpDownYear.Value, (string)comboBoxColors.SelectedItem, (int)numericUpDownProbig.Value, (int)numericUpDownValue.Value));
+                cars.Add(new Cars(textBoxModel.Text, (int)numericUpDownYear.Value, (string)comboBoxColors.SelectedItem, (int)numericUpDownProbig.Value, (int)numericUpDownValue.Value));
+                Update();
                 foreach (var item in this.Controls.OfType<TextBox>())
                 {
                     item.Text = "";
                 }
                 foreach (var item in this.Controls.OfType<NumericUpDown>())
                 {
-                    item.Value = 0;
+                    var type = item.GetType;
+                    if (type == numericUpDownYear.GetType)
+                    {
+                        numericUpDownYear.Value = 1990;
+                    }
+                    if (type == numericUpDownProbig.GetType)
+                    {
+                        numericUpDownProbig.Value = 0;
+                    }
+                    if (type == numericUpDownValue.GetType)
+                    {
+                        numericUpDownValue.Value = (decimal)1.0;
+                    }
                 }
                 foreach (var item in this.Controls.OfType<ComboBox>())
                 {
@@ -40,7 +59,7 @@ namespace _04_Controls_Lists
             }
 
         }
-       
+
         private void buttonShowCar_Click(object sender, EventArgs e)
         {
             Cars cars = new Cars();
@@ -59,17 +78,19 @@ namespace _04_Controls_Lists
 
         private void buttonDeleteCar_Click(object sender, EventArgs e)
         {
-            listBoxCars.Items.Remove(listBoxCars.SelectedItem);
+            cars.Remove((listBoxCars.SelectedItem as Cars)!);
+            Update();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(Cars));
+
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Cars>));
             try
             {
                 using (Stream fs = File.Create("ListCars.xml"))
                 {
-                    formatter.Serialize(fs,);
+                    formatter.Serialize(fs, cars);
                 }
             }
             catch (Exception ex)
@@ -79,15 +100,18 @@ namespace _04_Controls_Lists
         }
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(string));
-            string loadeWords = null;
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Cars>));
+            List<Cars> loadeCars = null;
             using (Stream fs = File.OpenRead("ListCars.xml"))
             {
                 if (fs.Length > 0)
                 {
-                    loadeWords = (string)formatter.Deserialize(fs);
+                    loadeCars = (List<Cars>)formatter.Deserialize(fs);
                 }
             }
+            listBoxCars.DataSource = loadeCars;
         }
+        public override string Text { get; set; }
+
     }
 }
