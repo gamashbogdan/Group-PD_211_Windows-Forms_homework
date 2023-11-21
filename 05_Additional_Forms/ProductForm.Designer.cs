@@ -70,8 +70,11 @@
             // 
             // numericUpDownPrice
             // 
+            numericUpDownPrice.DecimalPlaces = 2;
             numericUpDownPrice.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            numericUpDownPrice.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numericUpDownPrice.Location = new Point(115, 98);
+            numericUpDownPrice.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownPrice.Name = "numericUpDownPrice";
             numericUpDownPrice.Size = new Size(164, 30);
             numericUpDownPrice.TabIndex = 2;
@@ -80,17 +83,21 @@
             // 
             numericUpDownQuantity.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             numericUpDownQuantity.Location = new Point(115, 131);
+            numericUpDownQuantity.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDownQuantity.Name = "numericUpDownQuantity";
             numericUpDownQuantity.Size = new Size(164, 30);
             numericUpDownQuantity.TabIndex = 3;
             // 
             // comboBoxCountri
             // 
+            comboBoxCountri.DropDownWidth = 400;
             comboBoxCountri.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             comboBoxCountri.FormattingEnabled = true;
+            comboBoxCountri.Items.AddRange(new object[] { "Afghanistan – Афганистан", "Albania – Албания", "Armenia – Армения", "Australia – Австралия", "Austria – Австрия", "Azerbaijan – Азербайджан", "Belgium – Бельгия", "Bulgaria – Болгария", "Canada – Канада", "China – Китай", "Croatia – Хорватия", "Cuba – Куба", "Cyprus – Кипр", "Denmark –  Дания", "England – Англия", "Estonia – Эстония", "Finland – Финляндия", "France – Франция", "Germany – Германия", "Greece – Греция", "Greenland – Гренландия", "Hawaii – Гавайи", "Honduras – Гондурас", "Hong Kong – Гонконг", "Iceland – Исландия", "Iceland – Исландия", "Indonesia – Индонезия", "Iran – Иран", "Iraq – Ирак", "Ireland – Ирландия", "Israel – Израиль", "Italy – Италия", "Japan – Япония", "Java – Ява", "Kazakhstan – Казахстан", "Latvia – Латвия", "Lithuania – Литва", "Luxembourg – Люксембург", "Madagascar – Мадагаскар", "Malaysia – Малайзия", "Maldives – Мальдиви", "Malta – Мальта", "Man – Мэн ", "Mexico – Мексика", "Mongolia – Монголия", "Netherlands – Нидерланды", "New Zeland – Новая Зеландия", "Nicaragua – Никарагуа", "Norway – Норвегия", "Oman – Оман", "Panama – Панама", "Papua New Guinea – Папуа-Новая Гвинея", "Philippines – Филиппини", "Poland – Польша", "Portugal – Португалия", "Qatar – Катар", "Scotland – Шотландия", "Serbia – Сербия", "Slovenia – Словения", "Spain – Испания", "Sweden – Швеция", "Switzerland – Швейцария", "Syria – Сирия", "Taiwan – Тайвань,", "Thailand – Тайланд", "USA", "Vatican – Ватикан", "Vietnam – Вьетнам", "Wales – Уэльс" });
             comboBoxCountri.Location = new Point(115, 164);
             comboBoxCountri.Name = "comboBoxCountri";
             comboBoxCountri.Size = new Size(164, 31);
+            comboBoxCountri.Sorted = true;
             comboBoxCountri.TabIndex = 4;
             // 
             // numericUpDownDiscount

@@ -92,25 +92,24 @@ namespace Dz_na_23._11
                 {
                     formatter.Serialize(fs, cars);
                 }
+                MessageBox.Show("Save Dasus gyd :D");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             XmlSerializer formatter = new XmlSerializer(typeof(List<Cars>));
-            List<Cars> loadeCars = null;
             using (Stream fs = File.OpenRead("ListCars.xml"))
             {
                 if (fs.Length > 0)
                 {
-                    loadeCars = (List<Cars>)formatter.Deserialize(fs);
+                    cars = (List<Cars>)formatter.Deserialize(fs)!;
                 }
             }
-            listBoxCars.DataSource = loadeCars;
+            listBoxCars.DataSource = cars;
         }
-
     }
 }

@@ -12,7 +12,7 @@ namespace Dz_na_25._11
         public Product Product
         {
             get { return product; }
-            set 
+            set
             {
                 product = value;
                 textBoxName.Text = product.Name;
@@ -26,7 +26,7 @@ namespace Dz_na_25._11
         public ProductForm()
         {
             InitializeComponent();
-            
+
         }
         public ProductForm(Product product)
         {
@@ -37,11 +37,7 @@ namespace Dz_na_25._11
             }
             else
             {
-                textBoxName.Text = product.Name;
-                numericUpDownPrice.Value = (decimal)product.Price;
-                numericUpDownQuantity.Value = product.Quantity;
-                comboBoxCountri.Text = product.Countri;
-                numericUpDownDiscount.Value = product.Discount;
+                this.Product = product;
                 textBoxName.Enabled = false;
                 numericUpDownPrice.Enabled = false;
                 numericUpDownQuantity.Enabled = false;
@@ -64,14 +60,25 @@ namespace Dz_na_25._11
                 MessageBox.Show("Enter Name Product");
                 return;
             }
-            product = new Product
+            if (product == null) 
             {
-                Name = textBoxName.Text,
-                Price = (double)numericUpDownPrice.Value,
-                Quantity = (int)numericUpDownQuantity.Value,
-                Countri = (string)comboBoxCountri.SelectedItem,
-                Discount = (int)numericUpDownDiscount.Value
-            };
+                product = new Product
+                {
+                    Name = textBoxName.Text,
+                    Price = (double)numericUpDownPrice.Value,
+                    Quantity = (int)numericUpDownQuantity.Value,
+                    Countri = (string)comboBoxCountri.SelectedItem,
+                    Discount = (int)numericUpDownDiscount.Value
+                };
+            }
+            else
+            {
+                Product.Name = textBoxName.Text;
+                Product.Price = (double)numericUpDownPrice.Value;
+                Product.Quantity = (int)numericUpDownQuantity.Value;
+                Product.Countri = (string)comboBoxCountri.SelectedItem;
+                Product.Discount = (int)numericUpDownDiscount.Value;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
