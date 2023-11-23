@@ -58,10 +58,10 @@ namespace Dz_na_20._11
             {
                 if (fs.Length > 0)
                 {
-                    loadeWords = (string)formatter.Deserialize(fs);
+                    loadeWords = (string)formatter.Deserialize(fs)!;
                 }
             }
-            return loadeWords;
+            return loadeWords!;
         }
         private void MaxSymbolsNumericUpDown_ValueChanged(object sender, EventArgs e)
         {

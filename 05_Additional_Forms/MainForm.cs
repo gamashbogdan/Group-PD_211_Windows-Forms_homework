@@ -1,8 +1,3 @@
-using Dz_na_25._11;
-using Microsoft.VisualBasic.ApplicationServices;
-using System.Diagnostics;
-using System.Diagnostics.Metrics;
-
 namespace Dz_na_25._11
 {
     public partial class MainForm : Form

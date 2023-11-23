@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_Range_Controls_Indicator
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_Controls_Lists", "04_Controls_Lists\04_Controls_Lists.csproj", "{D87A4320-11D5-40F0-8C7B-BE366B1FBABE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_Additional_Forms", "05_Additional_Forms\05_Additional_Forms.csproj", "{71FD088E-36E0-4126-8351-261214C14938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_Additional_Forms", "05_Additional_Forms\05_Additional_Forms.csproj", "{71FD088E-36E0-4126-8351-261214C14938}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_RichTextBox_Dialogs", "06_RichTextBox_Dialogs\06_RichTextBox_Dialogs.csproj", "{23DB46A9-C73D-40C0-B918-7D87FCB9F458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{71FD088E-36E0-4126-8351-261214C14938}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71FD088E-36E0-4126-8351-261214C14938}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71FD088E-36E0-4126-8351-261214C14938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23DB46A9-C73D-40C0-B918-7D87FCB9F458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DB46A9-C73D-40C0-B918-7D87FCB9F458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DB46A9-C73D-40C0-B918-7D87FCB9F458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DB46A9-C73D-40C0-B918-7D87FCB9F458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
