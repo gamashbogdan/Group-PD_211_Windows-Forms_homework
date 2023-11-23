@@ -8,7 +8,7 @@ namespace Dz_na_27._11
         {
             InitializeComponent();
             toolStripSymbolsProgressBar.Maximum = richTextBox1.MaxLength;
-            richTextBox1.LoadFile(desctopRuty + @"\Text.rtf", RichTextBoxStreamType.RichText);
+            toolStripMaxLenghtLabel.Text = $"{richTextBox1.Text.Length}/{richTextBox1.MaxLength}";
         }
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -37,13 +37,11 @@ namespace Dz_na_27._11
                 richTextBox1.LoadFile(openFileDialog.FileName);
             }
         }
-
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
             richTextBox1.SaveFile(desctopRuty + @"\Text.rtf", RichTextBoxStreamType.RichText);
             MessageBox.Show("Save good");
         }
-
         private void toolStripButtonNewDocument_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to save this file?", "Warnning", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -57,27 +55,22 @@ namespace Dz_na_27._11
                 richTextBox1.Clear();
             }
         }
-
         private void toolStripButtonCopy_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
-
         private void toolStripButtonCut_Click(object sender, EventArgs e)
         {
             richTextBox1.Cut();
         }
-
         private void toolStripButtonPaste_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
         }
-
         private void toolStripButtonClear_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
         }
-
         private void toolStripButtonSetingColorText_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -86,7 +79,6 @@ namespace Dz_na_27._11
                 richTextBox1.SelectionColor = colorDialog.Color;
             }
         }
-
         private void toolStripButtonSetingColorFont_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -95,7 +87,6 @@ namespace Dz_na_27._11
                 richTextBox1.SelectionBackColor = colorDialog.Color;
             }
         }
-
         private void toolStripButtonSetingText_Click(object sender, EventArgs e)
         {
             FontDialog fontDialog = new FontDialog();
@@ -104,12 +95,10 @@ namespace Dz_na_27._11
                 richTextBox1.SelectionFont = fontDialog.Font;
             }
         }
-
         private void exitToolStripMenuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void fontAllTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog fontDialog = new FontDialog();
@@ -118,7 +107,6 @@ namespace Dz_na_27._11
                 richTextBox1.Font = fontDialog.Font;
             }
         }
-
         private void bacColorAllTexlToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -127,7 +115,6 @@ namespace Dz_na_27._11
                 richTextBox1.BackColor = colorDialog.Color;
             }
         }
-
         private void foreColorAllTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog colorDialog = new ColorDialog();
@@ -136,11 +123,10 @@ namespace Dz_na_27._11
                 richTextBox1.ForeColor = colorDialog.Color;
             }
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if(richTextBox1.Text.Length!=0)
+            if (richTextBox1.Text.Length != 0)
             {
                 DialogResult result = MessageBox.Show("Save Text?", "Save menu", MessageBoxButtons.YesNoCancel);
 
@@ -155,7 +141,6 @@ namespace Dz_na_27._11
                     e.Cancel = true;
                 }
             }
-
         }
     }
 }

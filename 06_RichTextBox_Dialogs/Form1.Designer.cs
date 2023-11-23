@@ -71,6 +71,7 @@
             fontAllTextToolStripMenuItem = new ToolStripMenuItem();
             bacColorAllTexlToolStripMenuItem = new ToolStripMenuItem();
             foreColorAllTextToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
             toolStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -411,7 +412,7 @@
             // 
             // setingToolStripMenuItem
             // 
-            setingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fontAllTextToolStripMenuItem, bacColorAllTexlToolStripMenuItem, foreColorAllTextToolStripMenuItem });
+            setingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fontAllTextToolStripMenuItem, bacColorAllTexlToolStripMenuItem, foreColorAllTextToolStripMenuItem, toolStripSeparator2 });
             setingToolStripMenuItem.Name = "setingToolStripMenuItem";
             setingToolStripMenuItem.Size = new Size(70, 24);
             setingToolStripMenuItem.Text = "Setting";
@@ -442,6 +443,11 @@
             foreColorAllTextToolStripMenuItem.Tag = "";
             foreColorAllTextToolStripMenuItem.Text = "Fore color all text";
             foreColorAllTextToolStripMenuItem.Click += foreColorAllTextToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(205, 6);
             // 
             // Form1
             // 
@@ -510,5 +516,6 @@
         private ToolStripMenuItem fontAllTextToolStripMenuItem;
         private ToolStripMenuItem bacColorAllTexlToolStripMenuItem;
         private ToolStripMenuItem foreColorAllTextToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
     }
 }
