@@ -1,5 +1,5 @@
+
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace Dz_na_04._12
 {
@@ -12,6 +12,8 @@ namespace Dz_na_04._12
             toolStripSymbolsProgressBar.Maximum = richTextBox.MaxLength;
             toolStripMaxLenghtLabel.Text = $"{richTextBox.Text.Length}/{richTextBox.MaxLength}";
             richTextBox.AllowDrop = true;
+            richTextBox.DragDrop += MainrichTextBox_DragDrop;
+            richTextBox.Size = new System.Drawing.Size(tabPage1.Width, tabPage1.Height);
 
         }
         public RichTextBox SelectedNameTb
@@ -57,22 +59,7 @@ namespace Dz_na_04._12
         }
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            SelectedNameTb.SaveFile(desctopRuty + @$"\{openFileDialog.FileName}.rtf", RichTextBoxStreamType.RichText);
-            MessageBox.Show("Save good");
-        }
-        private void toolStripButtonNewDocument_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Do you want to save this file?", "Warnning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                MessageBox.Show("Save good");
-                SelectedNameTb.SaveFile(desctopRuty + @"\Text.rtf", RichTextBoxStreamType.RichText);
-                SelectedNameTb.Clear();
-            }
-            else
-            {
-                SelectedNameTb.Clear();
-            }
+            SelectedNameTb.SaveFile(desctopRuty + @"\Text.rtf", RichTextBoxStreamType.RichText);
         }
         private void toolStripButtonCopy_Click(object sender, EventArgs e)
         {
@@ -152,12 +139,12 @@ namespace Dz_na_04._12
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormNotepad_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             if (SelectedNameTb.Text.Length != 0)
             {
-                DialogResult result = MessageBox.Show("Save Text?", "Save menu", MessageBoxButtons.YesNoCancel);
+                DialogResult result = MessageBox.Show("Save Text?", "", MessageBoxButtons.YesNoCancel);
 
                 if (result == DialogResult.Yes)
                 {
@@ -178,7 +165,7 @@ namespace Dz_na_04._12
             RichTextBox mainrichTextBox = new RichTextBox();
             page.UseVisualStyleBackColor = true;
             mainrichTextBox.AllowDrop = true;
-            mainrichTextBox.Location = new Point(-4, 0);
+            mainrichTextBox.Location = new Point((Size)richTextBox.Location);
             mainrichTextBox.Margin = new Padding(3, 4, 3, 4);
             mainrichTextBox.MaxLength = 10000;
             mainrichTextBox.Name = "richTextBox";
@@ -227,14 +214,72 @@ namespace Dz_na_04._12
                 toolStripCountSymbolsLabel.Text = $"{countSymbols}              ";
                 toolStripCountWordsLabel.Text = $"{wordCount}              ";
             };
+            mainrichTextBox.DragDrop += MainrichTextBox_DragDrop;
+
             page.Controls.Add(mainrichTextBox);
 
             tabControl.TabPages.Add(page);
         }
+
+
+        private void MainrichTextBox_DragDrop(object? sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                string item = e.Data.GetData(DataFormats.Text).ToString();
+                SelectedNameTb.Text = item;
+            }
+            else if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string res = SelectedNameTb.Text;
+                foreach (var item in (string[])e.Data.GetData(DataFormats.FileDrop))
+                {
+                    if (Path.GetExtension(item) == ".rtf")
+                    {
+                        SelectedNameTb.LoadFile(item);
+                        res += SelectedNameTb.Text + "\n";
+                        SelectedNameTb.Text = res;
+                    }
+                }
+            }
+        }
+
         private void toolStripButtonRemoveTab_Click(object sender, EventArgs e)
         {
-            if (tabControl.SelectedIndex != -1)
-                tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+            if (tabControl.SelectedIndex != -1 && SelectedNameTb.Text.Length != 0)
+            {
+                if (MessageBox.Show("Do you want to save this file?", "Warnning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Save good");
+                    SelectedNameTb.SaveFile(desctopRuty + @"\Text.rtf", RichTextBoxStreamType.RichText);
+                    if (tabControl.SelectedIndex != -1)
+                        tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+                }
+                else
+                {
+                    tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+                }
+            }
+            else
+            {
+                if (tabControl.SelectedIndex != -1)
+                    tabControl.TabPages.RemoveAt(tabControl.SelectedIndex);
+            }
+        }
+
+        private void toolStripMenuItemSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.CreatePrompt = true;
+            saveFileDialog.DefaultExt = ".rtf";
+            saveFileDialog.OverwritePrompt = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SelectedNameTb.SaveFile($"{saveFileDialog.FileName}");
+                MessageBox.Show("Save good");
+
+            }
         }
     }
 }
